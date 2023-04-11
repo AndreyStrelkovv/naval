@@ -1,0 +1,24 @@
+{
+  "name": "@naval/monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Xeno's Demo Project",
+  "main": "index.js",
+  "workspaces": [
+    "./common/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreyStrelkovv/naval.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreyStrelkovv/naval/issues"
+  },
+  "homepage": "https://github.com/AndreyStrelkovv/naval#readme"
+}
