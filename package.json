@@ -5,7 +5,8 @@
   "description": "Xeno's Demo Project",
   "main": "index.js",
   "workspaces": [
-    "./common/*"
+    "./common/*",
+    "./apps/*"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
