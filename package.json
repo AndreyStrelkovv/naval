@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/AndreyStrelkovv/naval/issues"
   },
-  "homepage": "https://github.com/AndreyStrelkovv/naval#readme"
+  "homepage": "https://github.com/AndreyStrelkovv/naval#readme",
+  "dependencies": {
+    "prettier": "^2.8.7"
+  }
 }
