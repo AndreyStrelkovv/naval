@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "fe-naval": "npm run serve -w apps/fe-naval",
+    "fe-naval": "npm run dev -w apps/fe-naval",
     "be-naval": "npm run start -w apps/be-naval",
     "naval": "concurrently \"npm:be-naval\" \"npm:fe-naval\""
   },
