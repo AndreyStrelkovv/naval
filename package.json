@@ -9,7 +9,10 @@
     "./apps/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fe-naval": "npm run serve -w apps/fe-naval",
+    "be-naval": "npm run start -w apps/be-naval",
+    "naval": "concurrently \"npm:be-naval\" \"npm:fe-naval\""
   },
   "repository": {
     "type": "git",
@@ -24,5 +27,8 @@
   "homepage": "https://github.com/AndreyStrelkovv/naval#readme",
   "dependencies": {
     "prettier": "^2.8.7"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
   }
 }
