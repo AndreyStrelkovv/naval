@@ -4,7 +4,10 @@ const getDb = require("../util/database").getDb
 const ObjectId = mongodb.ObjectId
 
 class TestModal {
-  constructor(title, description, id) {
+  title: string
+  description: string
+  _id: typeof ObjectId
+  constructor(title: string, description: string, id: string) {
     this.title = title
     this.description = description
     this._id = id ? new ObjectId(id) : undefined
@@ -26,10 +29,10 @@ class TestModal {
       dbOp = db.collection("modals").insertOne(this)
     }
     return dbOp
-      .then((result) => {
+      .then((result: any) => {
         console.log(result)
       })
-      .catch((err) => console.log(err))
+      .catch((err: any) => console.log(err))
   }
 
   static fetchAll() {
@@ -38,10 +41,10 @@ class TestModal {
       .collection("modals")
       .find()
       .toArray()
-      .then((products) => {
+      .then((products: any) => {
         return products
       })
-      .catch((err) => console.log(err))
+      .catch((err: any) => console.log(err))
   }
 
   // static findById(prodId) {
