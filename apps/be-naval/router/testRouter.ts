@@ -2,8 +2,7 @@ import express from "express"
 
 const router = express.Router()
 
-const TestModal = require("../models/testModal")
-
+import { TestModal } from "../models/testModal"
 router.get("/get-test-modal", async (req, res) => {
   try {
     const testModal = await TestModal.fetchAll()

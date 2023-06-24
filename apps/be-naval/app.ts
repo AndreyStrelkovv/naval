@@ -30,7 +30,6 @@ app.use((req: any, res: any, next: Function) => {
       next()
     })
     .catch((err: any) => console.log(err))
-  next()
 })
 
 app.use(testRoutes)

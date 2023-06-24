@@ -3,7 +3,7 @@ const getDb = require("../util/database").getDb
 
 const ObjectId = mongodb.ObjectId
 
-class TestModal {
+export class TestModal {
   title: string
   description: string
   _id: typeof ObjectId
@@ -69,4 +69,4 @@ class TestModal {
   // }
 }
 
-module.exports = TestModal
+// module.exports = TestModal
