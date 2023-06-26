@@ -1,21 +1,21 @@
 <template>
   <v-app>
     <v-main>
-      <p>{{ store.getTestModal }}</p>
-      <HelloWorld />
+      <LoginForm />
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted } from "vue"
-import HelloWorld from "./components/HelloWorld.vue"
+import LoginForm from "./components/LoginForm.vue"
+
 import { useTestStore } from "@/store/testStore"
 
 export default defineComponent({
   name: "App",
   components: {
-    HelloWorld,
+    LoginForm,
   },
   setup() {
     const store = useTestStore()

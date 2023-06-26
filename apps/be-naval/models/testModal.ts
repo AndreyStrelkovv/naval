@@ -17,14 +17,12 @@ export class TestModal {
     const db = getDb()
     let dbOp
 
-    // console.log("idid:" + this._id);
     if (this._id) {
       // update existing product
       dbOp = db
         .collection("modals")
         .updateOne({ _id: this._id }, { $set: this })
     } else {
-      // console.log("here");
       // insert new product
       dbOp = db.collection("modals").insertOne(this)
     }

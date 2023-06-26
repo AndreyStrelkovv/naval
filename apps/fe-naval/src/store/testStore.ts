@@ -16,7 +16,6 @@ export const useTestStore = defineStore("tests", {
         const data = await NavalApi.getTestModal()
         this.testModal = data.data
       } catch (error) {
-        alert(error)
         console.log(error)
       }
     },
