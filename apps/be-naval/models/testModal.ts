@@ -1,23 +1,17 @@
-const mongoose = require("mongoose")
+import { Schema, model } from "mongoose"
 
-const Schema = mongoose.Schema
-
-class testModalSchema extends mongoose.Schema {
-  constructor() {
-    super({
-      title: {
-        type: String,
-        required: true,
-      },
-      description: {
-        type: String,
-        required: true,
-      },
-    })
-  }
+export interface ITestModal {
+  title: String
+  description: String
 }
 
-export default mongoose.model("Modal", new testModalSchema())
+const testModalSchema = new Schema<ITestModal>({
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+})
+
+const TestModal = model<ITestModal>("Modal", testModalSchema)
+export default TestModal
 // module.exports = mongoose.model("TestModal", testModalSchema)
 
 // const mongodb = require("mongodb")

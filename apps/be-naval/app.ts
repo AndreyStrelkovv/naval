@@ -10,7 +10,7 @@ const testRoutes = require("./router/testRouter")
 
 // const User = require("./models/user")
 
-import { IUser, User } from "./models/user"
+import User, { IUser } from "./models/user"
 
 const app = express()
 
