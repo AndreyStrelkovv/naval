@@ -1,13 +1,14 @@
 <template>
   <v-app>
     <v-main>
+      <p :key="Object(testModal)">{{ testModal }}</p>
       <LoginForm />
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue"
+import { defineComponent, onMounted, computed } from "vue"
 import LoginForm from "./components/LoginForm.vue"
 
 import { useTestStore } from "@/store/testStore"
@@ -19,11 +20,11 @@ export default defineComponent({
   },
   setup() {
     const store = useTestStore()
-    // const testModal = store.getTestModal()
-    onMounted(() => {
-      store.fetchTestModal()
+    const testModal = computed(() => store.getTestModal)
+    onMounted(async () => {
+      await store.fetchTestModal()
     })
-    return { store }
+    return { store, testModal }
   },
 })
 </script>

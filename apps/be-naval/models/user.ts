@@ -1,6 +1,5 @@
-import { ObjectId } from "mongodb"
 // const getDb = require("../util/database")
-import { getDb } from "../util/database"
+// import { getDb } from "../util/database"
 
 // const ObjectId = mongodb.ObjectId
 
@@ -18,15 +17,15 @@ export class User implements IUser {
     this.email = email
   }
 
-  save() {
-    const db = getDb()
-    return db.collection("users").insertOne(this)
-  }
+  // save() {
+  //   const db = getDb()
+  //   return db.collection("users").insertOne(this)
+  // }
 
-  static findById(userId: string) {
-    const db = getDb()
-    return db.collection("users").findOne({ _id: new ObjectId(userId) })
-  }
+  // static findById(userId: string) {
+  //   const db = getDb()
+  //   return db.collection("users").findOne({ _id: new ObjectId(userId) })
+  // }
 }
 
 // module.exports = User
