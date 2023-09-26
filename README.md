@@ -1,5 +1,5 @@
 # Naval
 
-Xeno's Demo Project
+Andrey Strelkov Demo Project
 
 killall -9 node

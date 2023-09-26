@@ -1,8 +1,10 @@
 const express = require("express")
-const path = require("path")
-const cors = require("cors")
-const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
+const cors = require("cors")
+const path = require("path")
+const bodyParser = require("body-parser")
+require("dotenv").config()
+
 import testRoutes from "./router/testRouter"
 const authRoutes = require("./router/auth")
 
@@ -29,9 +31,7 @@ app.use(testRoutes)
 app.use(authRoutes)
 
 mongoose
-  .connect(
-    "mongodb+srv://Andrey:ra4qvyMtVKoaxYOQ@navaldemocluster.iqxrwr0.mongodb.net/test"
-  )
+  .connect(process.env.MONGODB_URL)
   .then((result: any) => {
     app.listen(3000)
     console.log("Connected")
