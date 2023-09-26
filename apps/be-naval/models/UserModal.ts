@@ -1,5 +1,3 @@
-// const mongoose = require("mongoose")
-// import bcrypt from "bcryptjs"
 const bcrypt = require("bcryptjs")
 import mongoose, { Schema, InferSchemaType } from "mongoose"
 
