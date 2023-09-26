@@ -4,8 +4,9 @@ const cors = require("cors")
 const path = require("path")
 const bodyParser = require("body-parser")
 require("dotenv").config()
+const { MONGODB_URL, BE_NAVAL_APP_PORT } = process.env
 
-import testRoutes from "./router/testRouter"
+import testRoutes from "./routes/testRouter"
 const authRoutes = require("./router/auth")
 
 import User, { IUser } from "./models/user"
@@ -31,11 +32,25 @@ app.use(testRoutes)
 app.use(authRoutes)
 
 mongoose
-  .connect(process.env.MONGODB_URL)
-  .then((result: any) => {
-    app.listen(3000)
-    console.log("Connected")
+  .connect(MONGODB_URL, {
+    useNewUrlParser: true, // Mongoose will use the new URL parser to parse MongoDB connection strings
+    useUnifiedTopology: true, // Mongoose will use the new Server Discovery and Monitoring engine
   })
-  .catch((err: any) => {
-    console.log(err)
+  .then(() => console.log("MongoDB is  connected successfully"))
+  .catch((err: any) => console.error(err))
+
+app.listen(BE_NAVAL_APP_PORT, () => {
+  console.log(`Server is listening on port ${BE_NAVAL_APP_PORT}`)
+})
+
+app.use(
+  cors({
+    origin: [`http://localhost:${BE_NAVAL_APP_PORT}`],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
   })
+)
+//   console.log("Connected")
+// .catch((err: any) => {
+//   console.log(err)
+// })
