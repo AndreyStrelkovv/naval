@@ -13,8 +13,8 @@ export const useTestStore = defineStore("tests", {
   actions: {
     async fetchTestModal() {
       try {
-        const data = await NavalApi.getTestModal()
-        this.testModal = data.data
+        const response = await NavalApi.getTestModal()
+        this.testModal = response.data
       } catch (error) {
         console.log(error)
       }

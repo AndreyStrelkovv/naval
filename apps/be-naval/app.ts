@@ -14,8 +14,8 @@ const { MONGODB_URL, BE_NAVAL_APP_PORT } = process.env
 
 mongoose
   .connect(MONGODB_URL, {
-    // useNewUrlParser: true, // Mongoose will use the new URL parser to parse MongoDB connection strings
-    // useUnifiedTopology: true, // Mongoose will use the new Server Discovery and Monitoring engine
+    useNewUrlParser: true, // Mongoose will use the new URL parser to parse MongoDB connection strings
+    useUnifiedTopology: true, // Mongoose will use the new Server Discovery and Monitoring engine
   })
   .then(() => {
     console.log("MongoDB is  connected successfully")
@@ -26,19 +26,19 @@ app.listen(BE_NAVAL_APP_PORT, () => {
   console.log(`Server is listening on port ${BE_NAVAL_APP_PORT}`)
 })
 
-// app.use(
-//   cors({
-//     origin: [`http://localhost:${BE_NAVAL_APP_PORT}`],
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     credentials: true,
-//   })
-// )
+app.use(
+  cors({
+    origin: [`http://localhost:${BE_NAVAL_APP_PORT}`],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+)
 
-app.use(cors())
+// app.use(cors())
 app.use(cookieParser())
 app.use(express.json())
+app.use("/", authRoute)
 app.use(testRoutes)
-app.use(authRoute)
 // app.use(bodyParser.json())
 // app.use(express.static(path.join(__dirname, "public")))
 
