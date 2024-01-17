@@ -1,3 +1,10 @@
-const test = "TEST"
+export class TestCommonClass {
+  test: string
+  constructor() {
+    this.test = "test"
+  }
 
-export default test
+  get testClassGetter() {
+    return "getterTest"
+  }
+}
