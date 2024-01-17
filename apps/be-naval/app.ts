@@ -8,7 +8,8 @@ const cookieParser = require("cookie-parser")
 // const bodyParser = require("body-parser")
 import testRoutes from "./routes/testRouter"
 import authRoute from "./routes/authRoute"
-const { MONGODB_URL, BE_NAVAL_APP_PORT } = process.env
+const { MONGODB_URL, BE_NAVAL_APP_PORT, BE_NAVAL_APP_URL, FE_NAVAL_APP_URL } =
+  process.env
 
 // import User, { IUser } from "./models/user"
 
@@ -28,7 +29,7 @@ app.listen(BE_NAVAL_APP_PORT, () => {
 
 app.use(
   cors({
-    origin: [`http://localhost:${BE_NAVAL_APP_PORT}`],
+    origin: [BE_NAVAL_APP_URL, FE_NAVAL_APP_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
