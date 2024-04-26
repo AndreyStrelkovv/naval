@@ -21,7 +21,7 @@ const userSchema = new Schema({
   },
 })
 
-type User = InferSchemaType<typeof userSchema>
+// type User = InferSchemaType<typeof userSchema>
 
 userSchema.pre("save", async function () {
   this.password = await bcrypt.hash(this.password, 12)
