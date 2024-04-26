@@ -1,8 +1,14 @@
 <template>
   <v-app>
     <v-main>
+      <v-app-bar :absolute="true" elevation="2">
+        <v-btn tag="router-link" to="/sign-up"> Sign Up</v-btn>
+        <v-btn tag="router-link" to="/login"> Login</v-btn>
+        <v-btn tag="router-link" to="/"> Home</v-btn>
+      </v-app-bar>
       <p :key="Object(testModal)">{{ testModal }}</p>
-      <LoginForm />
+      <!-- <LoginForm /> -->
+      <RouterView />
     </v-main>
   </v-app>
 </template>
