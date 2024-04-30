@@ -22,7 +22,7 @@
 import { defineComponent, ref } from "vue"
 
 export default defineComponent({
-  name: "Login",
+  name: "Sign Up",
   setup() {
     const email = ref("")
     const password = ref("")

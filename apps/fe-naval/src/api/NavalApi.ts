@@ -11,7 +11,7 @@ export default {
   getTestModal() {
     return apiClient.get("/get-test-modal")
   },
-  // login() {
-  //   return apiClient.post("/login")
-  // },
+  signUp(payload: any) {
+    return apiClient.post("/signup", payload)
+  },
 }
